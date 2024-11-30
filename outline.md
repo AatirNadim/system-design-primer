@@ -7,4 +7,8 @@
 5. **api design** --> service calls architecture --> security tiers (authentication & authorization), exception wrappers, rate limiting, cookie sessions, polling, long polling,
 
 
-```be well versed with er design, uml diagram, robust and failure-ready api architecture```
+```
+- be well versed with er design, uml diagram, robust and failure-ready api architecture
+- S.O.L.I.D principles should be followed at every stage
+- identify and use the design patterns wherever you deem applicable to ensure S.O.L.I.D principles are properly followed and the system architecture is scalable, robust and maintainable
+```
