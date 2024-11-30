@@ -3,36 +3,42 @@
 import java.util.Date;
 import java.util.List;
 
-abstract class Vehicle {
+
+enum VehicleType {
+    HEAVY, CAR, TWOWHEELER;
+}
+
+class Vehicle {
     String noPlate = "";
     String name = "";
     String company = "";
+    VehicleType vehicleType;
 }
 
 
-class Heavy extends Vehicle {
-    Heavy(String noPlate, String name, String company) {
-        this.noPlate = noPlate;
-        this.name =  name;
-        this.company = company;
-    }
-}
-
-class Car extends Vehicle {
-    Car(String noPlate, String name, String company) {
-        this.noPlate = noPlate;
-        this.name =  name;
-        this.company = company;
-    }
-}
-
-class TwoWheeler extends Vehicle {
-    TwoWheeler(String noPlate, String name, String company) {
-        this.noPlate = noPlate;
-        this.name =  name;
-        this.company = company;
-    }
-}
+//class Heavy extends Vehicle {
+//    Heavy(String noPlate, String name, String company) {
+//        this.noPlate = noPlate;
+//        this.name =  name;
+//        this.company = company;
+//    }
+//}
+//
+//class Car extends Vehicle {
+//    Car(String noPlate, String name, String company) {
+//        this.noPlate = noPlate;
+//        this.name =  name;
+//        this.company = company;
+//    }
+//}
+//
+//class TwoWheeler extends Vehicle {
+//    TwoWheeler(String noPlate, String name, String company) {
+//        this.noPlate = noPlate;
+//        this.name =  name;
+//        this.company = company;
+//    }
+//}
 
 // ******************** TICKET ********************
 /*
@@ -57,8 +63,14 @@ class Ticket {
         this.vehicle = vehicle;
     }
 
-    double getRate() {
-        return 0.0;
+    double getFixRate() {
+        double fixRate;
+        if(vehicle.vehicleType == VehicleType.HEAVY) {
+            return 23.4;
+        } else if(vehicle.vehicleType == VehicleType.CAR) {
+            return 11.1;
+        }
+        return 9.8;
     }
 }
 
@@ -95,11 +107,14 @@ class ParkingOfficial extends Person {
         this.phoneNo = phoneNo;
     }
 
-    void issueTicket(Customer customer) {
-
+    Ticket issueTicket(Customer customer, Vehicle vehicle) {
+        // logic of issuing ticket goes here
+        return new Ticket(...ticket_param_details);
     }
 
-    void invalidateTicket(Customer customer, Ticket ticket) {}
+    void invalidateTicket(Customer customer, Ticket ticket) {
+        // take in the ticket details and invalidate it
+    }
 
 }
 
