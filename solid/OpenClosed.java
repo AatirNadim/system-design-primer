@@ -1,4 +1,4 @@
-
+// entities should be open to extension but closed to modification
 
 interface PaymentService {
     void pay(double val);
